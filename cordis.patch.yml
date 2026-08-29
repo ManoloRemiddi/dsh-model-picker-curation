@@ -1,0 +1,19 @@
+# dsh-model-picker-curation bundle patch.
+#
+# MIT License — Copyright (c) 2026 Manolo Remiddi. SPDX-License-Identifier: MIT.
+# Full license text in LICENSE.
+#
+# Inserts the model picker curation plugin row into the web profile roster.
+# Applied as a profile bundle layer (the `dsh.bundle.patch` manifest field);
+# install with:
+#   dsh plugin --profile web add link:<repo>
+#
+# One package, both halves: the node half (exports ".") exists only so this row
+# mounts in the host Loader — it registers nothing; the browser half (declared
+# by `dsh.client`, served from lib/client.js) replaces the composer model
+# picker seat with a searchable version and adds the "Model Picker" settings
+# page. Remove the row (or `dsh plugin --profile web remove model-picker-curation`)
+# to restore the shipped picker.
+- insert:
+    - id: model-picker-curation
+      name: 'dsh-model-picker-curation'
