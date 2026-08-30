@@ -39,7 +39,7 @@ The plugin is a DSH bundle patch package (same pattern as other hot-pluggable
 web plugins):
 
 ```bash
-git clone https://github.com/<your-org>/dsh-model-picker-curation.git
+git clone https://github.com/ManoloRemiddi/dsh-model-picker-curation.git
 cd dsh-model-picker-curation
 dsh plugin --profile web add link:$(pwd)
 ```
