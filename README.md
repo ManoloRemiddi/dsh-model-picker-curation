@@ -89,9 +89,43 @@ The picker can only show models the locally installed provider catalogs know.
 `zai` and `openrouter` providers fall back to the bundled pi-ai catalog unless
 their `llm-pi-ai` profile in `settings.yaml` carries an explicit `models` list
 (which then **replaces** the bundled catalog). New models announced by a
-provider (e.g. a new GLM or Qwen tier) only appear once added to that list —
-the shipped **Settings → Models** page has a fetch-from-endpoint flow that
-pulls the current catalog for you.
+provider (e.g. a new GLM or Qwen tier) only appear once added to that list.
+
+### Adding models a provider announced but your catalog lacks
+
+Either use the shipped **Settings → Models** page (its fetch-from-endpoint
+flow pulls the current catalog from the provider), or edit
+`~/.dsh/settings.yaml` directly. Each entry needs `id`, `name`,
+`contextWindow`, and `maxTokens` (positive integers). Because an explicit
+`models` list replaces the bundled catalog, list **every** model you want to
+see — entries you omit disappear from the picker:
+
+```yaml
+# ~/.dsh/settings.yaml — llm-pi-ai section (example: Z.ai)
+llm-pi-ai:
+  providers:
+    zai:
+      apiKeyEnv: ZAI_API_KEY
+      models:
+        - id: glm-4.5-air
+          name: GLM-4.5-Air
+          contextWindow: 131072
+          maxTokens: 98304
+        - id: glm-5.3
+          name: GLM-5.3
+          contextWindow: 1048576
+          maxTokens: 131072
+        - id: glm-5.3-flash
+          name: GLM-5.3-Flash
+          contextWindow: 1048576
+          maxTokens: 131072
+        # …plus every other zai model you want to keep
+```
+
+The same applies to `openrouter` (e.g. `qwen/qwen3.8-max`). The harness
+hot-reloads `settings.yaml`, so the picker picks the new entries up on its
+next open. Real specs come from the provider (Z.ai docs, OpenRouter) — or
+let the fetch-from-endpoint flow fill them in.
 
 ## License
 
