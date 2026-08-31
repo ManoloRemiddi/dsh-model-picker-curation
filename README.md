@@ -78,10 +78,13 @@ dsh plugin --profile web remove model-picker-augmented
   catalog through the client wire API (`api.llm.models`). The plugin adds no
   model data of its own — if a model is missing from the picker, it is missing
   from your configured provider catalogs (see below).
-- Curation (hidden models + pinned order) is kept **in memory for the lifetime
-  of the plugin**: it applies instantly and resets on a page reload. This is
-  the standard behavior for a hot-pluggable web plugin; make it a static
-  deployment plugin if you need durable settings.
+- Curation (hidden models + pinned order) is **persisted durably on your
+  machine**: the node half registers a `model-picker-augmented` settings
+  namespace, and every change is written through the harness settings system
+  into `~/.dsh/settings.yaml` (`model-picker-augmented: { hidden: …,
+  pinned: … }`), so your pins and hidden models survive page refreshes,
+  browser restarts, and machine restarts. On startup the browser half hydrates
+  the picker from that stored value.
 
 ## Notes on model availability
 
