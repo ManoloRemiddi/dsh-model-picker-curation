@@ -41,12 +41,15 @@ web plugins):
 ```bash
 git clone https://github.com/ManoloRemiddi/dsh-model-picker-augmented.git
 cd dsh-model-picker-augmented
+pnpm install
 dsh plugin --profile web add link:$(pwd)
 ```
 
-Then restart the harness (or reload the web GUI). The composer model picker is
-now the searchable one and a **Model Picker Augmented** page appears under
-**Settings → Model Picker Augmented**.
+`pnpm install` matters: `link:` packages resolve their dependencies from their
+own directory, and the node half needs `schemastery` for the durable settings
+namespace. Then restart the harness (or reload the web GUI). The composer model
+picker is now the searchable one and a **Model Picker Augmented** page appears
+under **Settings → Model Picker Augmented**.
 
 To remove it:
 
