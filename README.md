@@ -1,4 +1,4 @@
-# dsh-model-picker-curation
+# dsh-model-picker-augmented
 
 > **MIT License** — Copyright (c) 2026 **Manolo Remiddi**
 > SPDX-License-Identifier: MIT — see [LICENSE](LICENSE) for the full license text.
@@ -39,8 +39,8 @@ The plugin is a DSH bundle patch package (same pattern as other hot-pluggable
 web plugins):
 
 ```bash
-git clone https://github.com/ManoloRemiddi/dsh-model-picker-curation.git
-cd dsh-model-picker-curation
+git clone https://github.com/ManoloRemiddi/dsh-model-picker-augmented.git
+cd dsh-model-picker-augmented
 dsh plugin --profile web add link:$(pwd)
 ```
 
@@ -51,7 +51,7 @@ now the searchable one and a **Model Picker** page appears under
 To remove it:
 
 ```bash
-dsh plugin --profile web remove model-picker-curation
+dsh plugin --profile web remove model-picker-augmented
 ```
 
 ## Usage

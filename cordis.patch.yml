@@ -1,4 +1,4 @@
-# dsh-model-picker-curation bundle patch.
+# dsh-model-picker-augmented bundle patch.
 #
 # MIT License — Copyright (c) 2026 Manolo Remiddi. SPDX-License-Identifier: MIT.
 # Full license text in LICENSE.
@@ -12,8 +12,8 @@
 # mounts in the host Loader — it registers nothing; the browser half (declared
 # by `dsh.client`, served from lib/client.js) replaces the composer model
 # picker seat with a searchable version and adds the "Model Picker" settings
-# page. Remove the row (or `dsh plugin --profile web remove model-picker-curation`)
+# page. Remove the row (or `dsh plugin --profile web remove model-picker-augmented`)
 # to restore the shipped picker.
 - insert:
-    - id: model-picker-curation
-      name: 'dsh-model-picker-curation'
+    - id: model-picker-augmented
+      name: 'dsh-model-picker-augmented'
