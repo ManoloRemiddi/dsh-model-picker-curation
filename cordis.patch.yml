@@ -11,7 +11,7 @@
 # One package, both halves: the node half (exports ".") exists only so this row
 # mounts in the host Loader — it registers nothing; the browser half (declared
 # by `dsh.client`, served from lib/client.js) replaces the composer model
-# picker seat with a searchable version and adds the "Model Picker" settings
+# picker seat with a searchable version and adds the "Model Picker Augmented" settings
 # page. Remove the row (or `dsh plugin --profile web remove model-picker-augmented`)
 # to restore the shipped picker.
 - insert:

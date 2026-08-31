@@ -6,7 +6,7 @@
 Searchable, curated composer model picker for [DeepSeek Harness](https://deepseek.com).
 
 This plugin replaces the model picker in the composer with a searchable version
-and adds a **Model Picker** settings page so you can control exactly which
+and adds a **Model Picker Augmented** settings page so you can control exactly which
 models appear in the list and which ones are pinned to the top.
 
 ## Features
@@ -45,8 +45,8 @@ dsh plugin --profile web add link:$(pwd)
 ```
 
 Then restart the harness (or reload the web GUI). The composer model picker is
-now the searchable one and a **Model Picker** page appears under
-**Settings → Model Picker**.
+now the searchable one and a **Model Picker Augmented** page appears under
+**Settings → Model Picker Augmented**.
 
 To remove it:
 
@@ -61,7 +61,7 @@ dsh plugin --profile web remove model-picker-augmented
 2. Enter **Model** to open the list — type in the search field at the top to
    filter (e.g. `qwen` shows only Qwen models and the providers that carry
    them; clear the field to show everything again).
-3. Open **Settings → Model Picker** to curate:
+3. Open **Settings → Model Picker Augmented** to curate:
    - **Visible / Hidden** toggles per model (hidden models vanish from the
      picker, stay listed here, and can be re-enabled at any time).
    - **Pin to top** per model, with up/down arrows to order the pinned section.
